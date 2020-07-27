@@ -1,11 +1,14 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        dockerfile true
+    }
+
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh '$(pwd)'
-                //sh 'node --version'
-                //sh 'svn --version'
+                sh 'node --version'
+                echo 'Getting working dir...'
+                sh 'pwd'
             }
         }
     }
